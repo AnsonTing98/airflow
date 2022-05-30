@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Predict Application</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+</head>
+<body>
+ <div class="home">
+	<h1>Animal Predict Application</h1>
+	<h4>1 for Yes, 0 for No</h4>
+
+    	<form action="{{ url_for('predict')}}" method="POST">
+      	  <input type="number" name="hair" id="hair" placeholder="Does the animal has hair? " min="0" max="1" required="required" />
+      	  <input type="number" name="feathers" placeholder="Does the animal has feather? " min="0" max="1" required="required" />
+      	  <input type="number" name="eggs" placeholder="Does the animal lay egg? " min="0" max="1" required="required" />
+	  <input type="number" name="milk" placeholder="Does the animal has milk? " min="0" max="1" required="required" />
+	  <input type="number" name="airborne" placeholder="Can the animal fly? " min="0" max="1" required="required" />
+	  <input type="number" name="aquatic" placeholder="Is the animal aqutic (in water)? " min="0" max="1" required="required" />
+	  <input type="number" name="predator" placeholder="Is the animal predator? " min="0" max="1" required="required" />
+	  <input type="number" name="toothed" placeholder="Does the animal has toothed? " min="0" max="1" required="required" />
+	  <input type="number" name="backbone" placeholder="Does the animal has backbone? " min="0" max="1" required="required" />
+	  <input type="number" name="breathes" placeholder="Does the animal breathes? " min="0" max="1" required="required" />
+	  <input type="number" name="venomous" placeholder="Does the animal venomous? " min="0" max="1" required="required" />
+	  <input type="number" name="fins" placeholder="Does the animal has fins? " min="0" max="1" required="required" />
+	  <select name="legs" id="legs" required>
+ 		<option value="">How many legs?</option>
+ 		<option value="0">0</option>
+ 		<option value="2">2</option>
+ 		<option value="4">4</option>
+ 		<option value="6">6</option>
+ 		<option value="8">8</option>
+	  </select>
+	  <input type="number" name="tail" placeholder="Does the animal has tail? " min="0" max="1" required="required" />
+	  <input type="number" name="domestic" placeholder="Does the animal domestic? " min="0" max="1" required="required" />
+	  <input type="number" name="catsize" placeholder="Does the animal cat size? " min="0" max="1" required="required" /><br>
+
+          <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    	</form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ 
+ <div class="result">
+     {{pred}}
+ </div>
+</body>
+</html>
