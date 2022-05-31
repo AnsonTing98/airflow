@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 
 app = Flask(__name__)
-model = load('animalModel.pkl')
+model = load('/opt/airflow/model/animalModel.pkl')
 
 cols = ['hair', 'feather', 'egg', 'milk', 'airborne', 'aquatic', 
 'predator', 'toothed', 'backbone', 'breathes',
